@@ -39,7 +39,7 @@ $(document).ready(function () {
 
     // <!-- emailjs to mail contact form data -->
     $(document).ready(function () {
-    emailjs.init("T4K1-57F5ZxI1QCWW"); // ✅ Replace with your actual public key
+    emailjs.init("BMcNrEtOPjDCXX9G1"); // ✅ Replace with your actual public key
 
     $("#contact-form").submit(function (event) {
       event.preventDefault(); // Stop the default form submission
