@@ -38,23 +38,30 @@ $(document).ready(function () {
     });
 
     // <!-- emailjs to mail contact form data -->
-    $(document).ready(function () {
-    emailjs.init("BMcNrEtOPjDCXX9G1"); // ✅ Replace with your actual public key
+   $(document).ready(function () {
+  emailjs.init("BMcNrEtOPjDCXX9G1"); // Replace with your actual EmailJS public key
 
-    $("#contact-form").submit(function (event) {
-      event.preventDefault(); // Stop the default form submission
+  $("#contact-form").submit(function (event) {
+    event.preventDefault();
 
-      emailjs.sendForm('contact_service', 'template_contact', this)
-        .then(function (response) {
-          console.log('SUCCESS!', response.status, response.text);
-          $("#contact-form")[0].reset();
-          alert("Form submitted successfully!");
-        }, function (error) {
-          console.error('FAILED...', error);
-          alert("Form submission failed...... Please try again.");
-        });
-    });
+    const $submitBtn = $(this).find("button[type='submit']");
+    $submitBtn.prop("disabled", true).text("Sending...");
+
+    emailjs.sendForm('contact_service', 'template_contact', this)
+      .then(function (response) {
+        console.log('SUCCESS!', response.status, response.text);
+        $("#contact-form")[0].reset();
+        alert("Form submitted successfully!");
+      }, function (error) {
+        console.error('FAILED...', error);
+        alert("Form submission failed. Please try again.");
+      })
+      .finally(function () {
+        $submitBtn.prop("disabled", false).text("Send Message");
+      });
   });
+});
+
 
     // <!-- emailjs to mail contact form data -->
 
