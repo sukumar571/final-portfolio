@@ -51,7 +51,7 @@ $(document).ready(function () {
           alert("Form submitted successfully!");
         }, function (error) {
           console.error('FAILED...', error);
-          alert("Form submission failed. Please try again.");
+          alert("Form submission failed...... Please try again.");
         });
     });
   });
