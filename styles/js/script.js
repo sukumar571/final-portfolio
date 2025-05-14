@@ -34,27 +34,27 @@ $(document).ready(function () {
         e.preventDefault();
         $('html, body').animate({
             scrollTop: $($(this).attr('href')).offset().top,
-        }, 500, 'linear')
+        }, 100, 'linear')
     });
 
     // <!-- emailjs to mail contact form data -->
-//     $(document).ready(function () {
-//     emailjs.init("T4K1-57F5ZxI1QCWW"); // ✅ Replace with your actual public key
+    $(document).ready(function () {
+    emailjs.init("T4K1-57F5ZxI1QCWW"); // ✅ Replace with your actual public key
 
-//     $("#contact-form").submit(function (event) {
-//       event.preventDefault(); // Stop the default form submission
+    $("#contact-form").submit(function (event) {
+      event.preventDefault(); // Stop the default form submission
 
-//       emailjs.sendForm('contact_service', 'template_contact', this)
-//         .then(function (response) {
-//           console.log('SUCCESS!', response.status, response.text);
-//           $("#contact-form")[0].reset();
-//           alert("Form submitted successfully!");
-//         }, function (error) {
-//           console.error('FAILED...', error);
-//           alert("Form submission failed. Please try again.");
-//         });
-//     });
-//   });
+      emailjs.sendForm('contact_service', 'template_contact', this)
+        .then(function (response) {
+          console.log('SUCCESS!', response.status, response.text);
+          $("#contact-form")[0].reset();
+          alert("Form submitted successfully!");
+        }, function (error) {
+          console.error('FAILED...', error);
+          alert("Form submission failed. Please try again.");
+        });
+    });
+  });
 
     // <!-- emailjs to mail contact form data -->
 
@@ -132,9 +132,9 @@ function showProjects(projects) {
     projectsContainer.innerHTML = projectHTML;
 
     // <!-- tilt js effect starts -->
-    VanillaTilt.init(document.querySelectorAll(".tilt"), {
-        max: 15,
-    });
+    // VanillaTilt.init(document.querySelectorAll(".tilt"), {
+    //     max: 15,
+    // });
     // <!-- tilt js effect ends -->
 
     /* ===== SCROLL REVEAL ANIMATION ===== */
@@ -159,20 +159,20 @@ fetchData("projects").then(data => {
 });
 
 // <!-- tilt js effect starts -->
-VanillaTilt.init(document.querySelectorAll(".tilt"), {
-    max: 15,
-});
+// VanillaTilt.init(document.querySelectorAll(".tilt"), {
+//     max: 15,
+// });
 // <!-- tilt js effect ends -->
 
 
 // pre loader start
-// function loader() {
-//     document.querySelector('.loader-container').classList.add('fade-out');
-// }
-// function fadeOut() {
-//     setInterval(loader, 500);
-// }
-// window.onload = fadeOut;
+function loader() {
+    document.querySelector('.loader-container').classList.add('fade-out');
+}
+function fadeOut() {
+    setInterval(loader, 500);
+}
+window.onload = fadeOut;
 // pre loader end
 
 // disable developer mode
@@ -216,17 +216,17 @@ const srtop = ScrollReveal({
 });
 
 /* SCROLL HOME */
-srtop.reveal('.home .content h3', { delay: 100 });
-srtop.reveal('.home .content p', { delay: 200 });
-srtop.reveal('.home .content .btn', { delay: 200 });
+// srtop.reveal('.home .content h3', { delay: 100 });
+// srtop.reveal('.home .content p', { delay: 200 });
+// srtop.reveal('.home .content .btn', { delay: 200 });
 
-srtop.reveal('.home .image', { delay: 400 });
-srtop.reveal('.home .linkedin', { interval: 600 });
-srtop.reveal('.home .github', { interval: 800 });
-srtop.reveal('.home .twitter', { interval: 1000 });
-srtop.reveal('.home .telegram', { interval: 600 });
-srtop.reveal('.home .instagram', { interval: 600 });
-srtop.reveal('.home .dev', { interval: 600 });
+// srtop.reveal('.home .image', { delay: 400 });
+// srtop.reveal('.home .linkedin', { interval: 600 });
+// srtop.reveal('.home .github', { interval: 800 });
+// srtop.reveal('.home .twitter', { interval: 1000 });
+// srtop.reveal('.home .telegram', { interval: 600 });
+// srtop.reveal('.home .instagram', { interval: 600 });
+// srtop.reveal('.home .dev', { interval: 600 });
 
 /* SCROLL ABOUT */
 srtop.reveal('.about .content h3', { delay: 200 });
@@ -258,10 +258,10 @@ srtop.reveal('.contact .container .form-group', { delay: 400 });
 
 
 //////////////////////////////
-// srtop.reveal('.home .content h2', { delay: 100, origin: 'left' });
-//   srtop.reveal('.home .content h1', { delay: 200, origin: 'left' });
-//   srtop.reveal('.home .content p', { delay: 300, origin: 'left' });
-//   srtop.reveal('.home .content h2:last-of-type', { delay: 400, origin: 'left' }); // your 'Python Web Developer'
-//   srtop.reveal('.home .btn', { delay: 500, origin: 'bottom' });
-//   srtop.reveal('.home .image', { delay: 600, origin: 'top' });
-//   srtop.reveal('.home .social-icons li', { interval: 200, origin: 'bottom' });
+srtop.reveal('.home .content h2', { delay: 100, origin: 'left' });
+  srtop.reveal('.home .content h1', { delay: 200, origin: 'left' });
+  srtop.reveal('.home .content p', { delay: 300, origin: 'left' });
+  srtop.reveal('.home .content h2:last-of-type', { delay: 400, origin: 'left' }); // your 'Python Web Developer'
+  srtop.reveal('.home .btn', { delay: 500, origin: 'bottom' });
+  srtop.reveal('.home .image', { delay: 500, origin: 'right' });
+  srtop.reveal('.home .social-icons li', { interval: 200, origin: 'bottom' });
