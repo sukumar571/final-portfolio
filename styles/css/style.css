@@ -166,6 +166,13 @@ header .navbar ul li a:hover {
   #menu {
     display: block;
   }
+  img{
+    height: 5vh;
+    width:10vw ;
+  }
+  .logo{
+    margin-left: -10%;
+  }
   header .navbar {
     position: fixed;
     top: 6.5rem;
