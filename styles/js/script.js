@@ -52,7 +52,8 @@ $(document).ready(function () {
         console.log('SUCCESS!', response.status, response.text);
         $("#contact-form")[0].reset();
         alert("Form submitted successfully!");
-      }, function (error) {
+      }, 
+      function (error) {
         console.error('FAILED...', error);
         alert("Form submission failed. Please try again.");
       })
